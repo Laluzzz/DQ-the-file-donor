@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_VID
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_PIC
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
@@ -53,13 +53,13 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_video(
-                                                 video=(MELCOW_VID),
+                temp.MELCOW['welcome'] = await message.reply_photo(
+                                                 photo=(MELCOW_PIC),
                                                  caption=(MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton("Support", url="https://t.me/+8i064A8O6zYzZWY1"),
-                                                                           InlineKeyboardButton("Main Channel", url="https://t.me/+LJRsBp82HiJhNDhl")
+                                                                           InlineKeyboardButton("⭕ ചാനൽ 1 ⭕", url="https://t.me/+q0AC-JqO3m44NmY9"),
+                                                                           InlineKeyboardButton("⭕ ചാനൽ 2 ⭕", url="https://t.me/+2aWYIDf_ThAwZDBl")
                                                                          
                                                                          ]]
                                                  ),
